@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPM Dependency Install/Uninstall Commands</title>
+    <meta name="description" content="My Blog">
+    
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Java Blog">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="Java Blog">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    
+  </head>
+  <body>
+    
+    <main class="container  tmpl-post">
+
+      <div class="post-title">NPM Dependency Install/Uninstall Commands 
+<small><span class="badge rounded-pill bg-info">~20 mins</span></small> 
+</div>
+<div class="post-content">
+<div class="row">  
+  <div class="col">
+    <h4 id="npm-repository">NPM Repository <a class="direct-link" href="#npm-repository">#</a></h4>
+<ul>
+<li><a href="https://www.npmjs.com/">https://www.npmjs.com/</a></li>
+</ul>
+<h6 id="prerequisite-%3A-create-a-nodejs-project">Prerequisite : Create a NodeJS Project <a class="direct-link" href="#prerequisite-%3A-create-a-nodejs-project">#</a></h6>
+<pre class="language-js"><code class="language-js">  mkdir project1<br>  cd project1<br>  npm init <span class="token operator">-</span>y</code></pre>
+<p>package.json</p>
+<pre class="language-js"><code class="language-js">  <span class="token punctuation">{</span><br>    <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"project1"</span><span class="token punctuation">,</span><br>    <span class="token string-property property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span><br>    <span class="token string-property property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>    <span class="token string-property property">"main"</span><span class="token operator">:</span> <span class="token string">"index.js"</span><span class="token punctuation">,</span><br>    <span class="token string-property property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token string-property property">"test"</span><span class="token operator">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token string-property property">"author"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>    <span class="token string-property property">"license"</span><span class="token operator">:</span> <span class="token string">"ISC"</span><span class="token punctuation">,</span><br>    <span class="token string-property property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token comment">// Here all the dependencies will be added</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br></code></pre>
+<h6 id="task-1%3A-install-a-dependency-jquery">Task 1: Install a Dependency Jquery <a class="direct-link" href="#task-1%3A-install-a-dependency-jquery">#</a></h6>
+<pre class="language-js"><code class="language-js">  npm install jquery</code></pre>
+<p>(or)</p>
+<pre class="language-js"><code class="language-js">  npm i jquery</code></pre>
+<ul>
+<li>In package.json, dependency entry added for jquery.</li>
+</ul>
+<h6 id="task-1.1%3A-check-node_modules-folder-for-jquery.">Task 1.1: Check node_modules folder for jquery. <a class="direct-link" href="#task-1.1%3A-check-node_modules-folder-for-jquery.">#</a></h6>
+<ul>
+<li>In node_modules/jquery folder, jquery files are downloaded.</li>
+</ul>
+<pre class="language-js"><code class="language-js">  <span class="token string-property property">"jquery"</span><span class="token operator">:</span> <span class="token string">"^3.5.1"</span><span class="token punctuation">,</span></code></pre>
+<h6 id="task-2%3A-uninstall-a-dependency">Task 2: Uninstall a dependency <a class="direct-link" href="#task-2%3A-uninstall-a-dependency">#</a></h6>
+<pre class="language-js"><code class="language-js">  npm remove jquery</code></pre>
+<h6 id="task-3%3A-install-multiple-dependency-in-a-single-command">Task 3: Install multiple dependency in a single command <a class="direct-link" href="#task-3%3A-install-multiple-dependency-in-a-single-command">#</a></h6>
+<pre class="language-js"><code class="language-js">  npm install jquery bootstrap</code></pre>
+<h6 id="task-4%3A-install-bootstrap-latest-version">Task 4: Install bootstrap latest version <a class="direct-link" href="#task-4%3A-install-bootstrap-latest-version">#</a></h6>
+<pre class="language-js"><code class="language-js">  npm install bootstrap@latest</code></pre>
+<h6 id="task-5%3A-install-bootstrap-with-a-specific-version">Task 5: Install bootstrap with a specific version <a class="direct-link" href="#task-5%3A-install-bootstrap-with-a-specific-version">#</a></h6>
+<pre class="language-js"><code class="language-js">  npm install bootstrap@<span class="token number">3.3</span><span class="token number">.6</span></code></pre>
+  
+  </div>
+</div>
+
+</div>
+
+    </main>
+
+    <footer></footer>
+
+    <!-- Current page: /nodejs/npm-dependency/ -->
+    <script>
+    function updateStatus(id){
+      alert("Successfully Updated" + id);
+    }
+    </script>
+  </body>
+</html>

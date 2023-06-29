@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Literal</title>
+    <meta name="description" content="This is a post">
+    
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Java Blog">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="Java Blog">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    
+  </head>
+  <body>
+    
+    <main class="container  tmpl-post">
+
+      <div class="post-title">Template Literal 
+<small><span class="badge rounded-pill bg-info">3 hrs</span></small> 
+</div>
+<div class="post-content">
+<div class="row">  
+  <div class="col">
+    <h6 id="task-1%3A-append-firstname-and-lastname">Task 1: Append FirstName and LastName <a class="direct-link" href="#task-1%3A-append-firstname-and-lastname">#</a></h6>
+<pre class="language-js"><code class="language-js">    <span class="token keyword">let</span> firstName <span class="token operator">=</span> <span class="token string">"Naresh"</span> <span class="token punctuation">;</span><br>    <span class="token keyword">let</span> lastName <span class="token operator">=</span> <span class="token string">"Kumar"</span><span class="token punctuation">;</span><br><br>    <span class="token comment">// Appending String</span><br>    <span class="token keyword">let</span> fullName <span class="token operator">=</span> firstName <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> lastName <span class="token punctuation">;</span><br>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>fullName<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token comment">// Output: Naresh Kumar</span><br><br>    <span class="token comment">// Using Template Literals</span><br>    <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>firstName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>lastName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">;</span><br>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span><br>   <span class="token comment">// Output: Naresh Kumar</span></code></pre>
+<h5 id="questions">Questions <a class="direct-link" href="#questions">#</a></h5>
+<ul>
+<li>What is Template Literals ?</li>
+<li>What is the syntax for Template Literals ?</li>
+</ul>
+  
+  </div>
+</div>
+
+</div>
+
+    </main>
+
+    <footer></footer>
+
+    <!-- Current page: /javascript/template_literals/ -->
+    <script>
+    function updateStatus(id){
+      alert("Successfully Updated" + id);
+    }
+    </script>
+  </body>
+</html>

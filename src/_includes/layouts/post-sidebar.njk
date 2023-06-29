@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-post
+---
+<div class="row">
+
+  <div class="col-2">
+    <h4>Articles</h4>
+  <ul>
+
+  </ul>
+  </div>
+  <div class="col">
+    <div class="post-title">{{ title }} 
+    <small> <span class="badge badge-pill badge-success">{{duration}}</span></small> 
+    </div>
+    <div class="post-content">
+    <div class="row">  
+      <div class="col">
+        {{ content | safe }}  
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+<ul>
+  {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
+  {%- if nextPost %}<li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+  {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+  {%- if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+</ul>

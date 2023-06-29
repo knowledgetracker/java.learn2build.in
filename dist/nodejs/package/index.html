@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Configuration</title>
+    <meta name="description" content="My Blog">
+    
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Java Blog">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="Java Blog">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    
+  </head>
+  <body>
+    
+    <main class="container  tmpl-post">
+
+      <div class="post-title">Package Configuration 
+<small><span class="badge rounded-pill bg-info">3 hrs</span></small> 
+</div>
+<div class="post-content">
+<div class="row">  
+  <div class="col">
+    <h6 id="package.json">package.json <a class="direct-link" href="#package.json">#</a></h6>
+<pre class="language-json"><code class="language-json">    <span class="token punctuation">{</span><br>  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"demo-project"</span><span class="token punctuation">,</span><br>  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.2.22"</span><span class="token punctuation">,</span><br>  <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Demo Project"</span><span class="token punctuation">,</span><br>  <span class="token property">"main"</span><span class="token operator">:</span> <span class="token string">"server.js"</span><span class="token punctuation">,</span><br>  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"node server.js"</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"keywords"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>  <span class="token property">"author"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>  <span class="token property">"license"</span><span class="token operator">:</span> <span class="token string">"ISC"</span><span class="token punctuation">,</span><br>  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"bootstrap"</span><span class="token operator">:</span> <span class="token string">"^4.5.3"</span><span class="token punctuation">,</span><br>    <span class="token property">"http-server"</span><span class="token operator">:</span> <span class="token string">"^0.12.3"</span><span class="token punctuation">,</span><br>    <span class="token property">"jquery"</span><span class="token operator">:</span> <span class="token string">"^3.5.1"</span><span class="token punctuation">,</span><br>    <span class="token property">"lodash"</span><span class="token operator">:</span> <span class="token string">"^4.17.20"</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"html-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"^5.0.0-alpha.14"</span><span class="token punctuation">,</span><br>    <span class="token property">"webpack"</span><span class="token operator">:</span> <span class="token string">"^5.4.0"</span><span class="token punctuation">,</span><br>    <span class="token property">"webpack-cli"</span><span class="token operator">:</span> <span class="token string">"^4.2.0"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br></code></pre>
+<h6 id="task-1%3A-package-details">Task 1: Package Details <a class="direct-link" href="#task-1%3A-package-details">#</a></h6>
+<pre class="language-js"><code class="language-js">  <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"demo-project"</span><span class="token punctuation">,</span><br>  <span class="token string-property property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span><br>  <span class="token string-property property">"description"</span><span class="token operator">:</span> <span class="token string">"Demo Project"</span><span class="token punctuation">,</span></code></pre>
+<h6 id="task-2%3A-versioning">Task 2: Versioning <a class="direct-link" href="#task-2%3A-versioning">#</a></h6>
+<ul>
+<li>Format: major.minor.patch</li>
+<li>major release, minor release, patch release</li>
+<li>Reference: <a href="https://docs.npmjs.com/about-semantic-versioning">https://docs.npmjs.com/about-semantic-versioning</a></li>
+</ul>
+<pre class="language-js"><code class="language-js">    <span class="token string-property property">"version"</span><span class="token operator">:</span> <span class="token string">"1.2.22"</span><span class="token punctuation">,</span></code></pre>
+<h6 id="task-3%3A-dependencies">Task 3: Dependencies <a class="direct-link" href="#task-3%3A-dependencies">#</a></h6>
+<ul>
+<li>&quot;dependencies&quot;: Packages required by your application in production.</li>
+<li>&quot;devDependencies&quot;: Packages that are only needed for local development and testing.</li>
+</ul>
+  
+  </div>
+</div>
+
+</div>
+
+    </main>
+
+    <footer></footer>
+
+    <!-- Current page: /nodejs/package/ -->
+    <script>
+    function updateStatus(id){
+      alert("Successfully Updated" + id);
+    }
+    </script>
+  </body>
+</html>

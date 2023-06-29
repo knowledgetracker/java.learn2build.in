@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 05 - Objects</title>
+    <meta name="description" content="My Blog">
+    
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Java Blog">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="Java Blog">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    
+  </head>
+  <body>
+    
+    <main class="container  tmpl-post">
+
+      <div class="post-title">Day 05 - Objects 
+<small><span class="badge rounded-pill bg-info">3 hrs</span></small> 
+</div>
+<div class="post-content">
+<div class="row">  
+  <div class="col">
+    <h3 id="solved">Solved <a class="direct-link" href="#solved">#</a></h3>
+<ul>
+<li>
+<h5 id="solved-1%3A">Solved 1: <a class="direct-link" href="#solved-1%3A">#</a></h5>
+</li>
+</ul>
+<pre class="language-java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">day05</span><span class="token punctuation">;</span><br><br><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BookDemo</span> <span class="token punctuation">{</span><br><br>	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>		<br>		<span class="token class-name">BookDemo</span> newBook <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BookDemo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>newBook<span class="token punctuation">)</span><span class="token punctuation">;</span><br>		newBook<span class="token punctuation">.</span><span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>	<span class="token punctuation">}</span><br>	<br>	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Display Method is invoked"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token punctuation">}</span><br><br><span class="token punctuation">}</span></code></pre>
+<ul>
+<li>
+<h5 id="solved-2%3A">Solved 2: <a class="direct-link" href="#solved-2%3A">#</a></h5>
+</li>
+</ul>
+<pre class="language-java"><code class="language-java"><span class="token comment">/**<br> * In the real world, you'll often find many individual objects all of the same<br> * kind. There may be thousands of other bicycles in existence, all of the same<br> * make and model. Each bicycle was built from the same set of blueprints and<br> * therefore contains the same components. In object-oriented terms, we say that<br> * your bicycle is an instance of the class of objects known as bicycles. A<br> * class is the blueprint from which individual objects are created.<br> * <br> * @author BharathwajSoundarara<br> *<br> */</span><br><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Bicycle</span> <span class="token punctuation">{</span><br><br>	<span class="token keyword">int</span> speed <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>	<span class="token keyword">int</span> gear <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><br><br>	<span class="token keyword">void</span> <span class="token function">changeGear</span><span class="token punctuation">(</span><span class="token keyword">int</span> newValue<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>		gear <span class="token operator">=</span> newValue<span class="token punctuation">;</span><br>	<span class="token punctuation">}</span><br><br>	<span class="token keyword">void</span> <span class="token function">speedUp</span><span class="token punctuation">(</span><span class="token keyword">int</span> increment<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>		speed <span class="token operator">=</span> speed <span class="token operator">+</span> increment<span class="token punctuation">;</span><br>	<span class="token punctuation">}</span><br><br>	<span class="token keyword">void</span> <span class="token function">applyBrakes</span><span class="token punctuation">(</span><span class="token keyword">int</span> decrement<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>		speed <span class="token operator">=</span> speed <span class="token operator">-</span> decrement<span class="token punctuation">;</span><br>	<span class="token punctuation">}</span><br><br>	<span class="token keyword">void</span> <span class="token function">printStates</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">" speed:"</span> <span class="token operator">+</span> speed <span class="token operator">+</span> <span class="token string">" gear:"</span> <span class="token operator">+</span> gear<span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><br></code></pre>
+<p>``java<br>
+/**</p>
+<ul>
+<li>Here's a BicycleDemo class that creates two separate Bicycle objects and</li>
+<li>invokes their methods:</li>
+<li></li>
+<li>@author BharathwajSoundarara</li>
+<li></li>
+</ul>
+<p>*/<br>
+public class BicycleDemo {<br>
+public static void main(String[] args) {</p>
+<pre><code>	// Create two different
+	// Bicycle objects
+	Bicycle bike1 = new Bicycle();
+	Bicycle bike2 = new Bicycle();
+<pre><code>// Invoke methods on
+// those objects
+bike1.speedUp(10);
+bike1.changeGear(2);
+bike1.printStates();
+
+bike2.speedUp(10);
+bike2.changeGear(2);
+bike2.speedUp(10);
+bike2.changeGear(3);
+bike2.printStates();
+</code></pre>
+<p>}<br>
+</code></pre></p>
+<p>}</p>
+<pre><code>- ##### Solved 3: 
+``` java
+public class Animal{
+<pre><code>	int numLegs = 4;      // initialize on declaration
+	String species;
+
+
+	public Animal(){
+		species = &amp;quot;Dog&amp;quot;;    // initialize in constructor
+	}
+</code></pre>
+<p>}<br>
+</code></pre></p>
+<ul>
+<li>
+<h5 id="solved-4%3A">Solved 4: <a class="direct-link" href="#solved-4%3A">#</a></h5>
+</li>
+</ul>
+<pre class="language-java"><code class="language-java"><span class="token comment">// Animal.java</span><br><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Animal</span><span class="token punctuation">{</span><br><br>		<span class="token keyword">int</span> numLegs <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>      <span class="token comment">// initialize on declaration</span><br>		<span class="token class-name">String</span> species<span class="token punctuation">;</span><br>	<br>	<br>		<span class="token keyword">public</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token class-name">String</span> speciesName<span class="token punctuation">)</span><span class="token punctuation">{</span><br>			species <span class="token operator">=</span> speciesName<span class="token punctuation">;</span>    <span class="token comment">// initialize in constructor</span><br>		<span class="token punctuation">}</span><br><br>		<span class="token annotation punctuation">@Override</span><br>		<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>			<span class="token class-name">String</span> animalDetails <span class="token operator">=</span> <span class="token string">"{ numLengs : "</span><span class="token operator">+</span>numLegs<span class="token operator">+</span><span class="token string">" species: "</span><span class="token operator">+</span>species<span class="token operator">+</span><span class="token string">" }"</span><span class="token punctuation">;</span><br>			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>animalDetails<span class="token punctuation">)</span><span class="token punctuation">;</span><br>			<span class="token keyword">return</span> animalDetails<span class="token punctuation">;</span><br>		<span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><br><br><span class="token comment">//  App.java</span><br><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">App</span><span class="token punctuation">{</span><br><br>	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span><br>		<span class="token class-name">Animal</span> dog <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token string">"Dog"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>		dog<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token punctuation">}</span><br><br><span class="token punctuation">}</span></code></pre>
+<ul>
+<li>
+<h5 id="solved-5%3A">Solved 5: <a class="direct-link" href="#solved-5%3A">#</a></h5>
+</li>
+</ul>
+<pre class="language-java"><code class="language-java"> <span class="token comment">// Animal.java</span><br><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Animal</span><span class="token punctuation">{</span><br><br>		<span class="token keyword">int</span> numLegs<span class="token punctuation">;</span>      <br>		<span class="token class-name">String</span> species<span class="token punctuation">;</span><br>	<br>	<br>		<span class="token keyword">public</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token class-name">String</span> speciesName<span class="token punctuation">,</span> <span class="token keyword">int</span> noOfLegs<span class="token punctuation">)</span><span class="token punctuation">{</span><br>			species <span class="token operator">=</span> speciesName<span class="token punctuation">;</span>    <br>			numLegs <span class="token operator">=</span> noOfLegs<span class="token punctuation">;</span><br>		<span class="token punctuation">}</span><br><br>		<span class="token annotation punctuation">@Override</span><br>		<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>			<span class="token class-name">String</span> animalDetails <span class="token operator">=</span> <span class="token string">"{ numLengs : "</span><span class="token operator">+</span>numLegs<span class="token operator">+</span><span class="token string">" species: "</span><span class="token operator">+</span>species<span class="token operator">+</span><span class="token string">" }"</span><span class="token punctuation">;</span><br>			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>animalDetails<span class="token punctuation">)</span><span class="token punctuation">;</span><br>			<span class="token keyword">return</span> animalDetails<span class="token punctuation">;</span><br>		<span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><br><br><span class="token comment">//  App.java</span><br><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">App</span><span class="token punctuation">{</span><br><br>	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span><br>		<span class="token class-name">Animal</span> dog <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token string">"Dog"</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>		dog<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>		<span class="token class-name">Animal</span> penguin <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token string">"penguin"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>		penguin<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token punctuation">}</span><br><br><span class="token punctuation">}</span></code></pre>
+<h3 id="practice">Practice <a class="direct-link" href="#practice">#</a></h3>
+<pre><code>- Create a new instance of 'Student' class with methods, and print the student details in the main method.
+- Create a new instance of 'Calculator' class that performs various mathematical operations.  (Addition, Sub, Multiplication &amp; Division). Call the instance methods for addition, subtraction, multiplication and division in the main class.
+</code></pre>
+  
+  </div>
+</div>
+
+</div>
+
+    </main>
+
+    <footer></footer>
+
+    <!-- Current page: /java/day5/ -->
+    <script>
+    function updateStatus(id){
+      alert("Successfully Updated" + id);
+    }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax using axios</title>
+    <meta name="description" content="Fetch">
+    
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Java Blog">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="Java Blog">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    
+  </head>
+  <body>
+    
+    <main class="container  tmpl-post">
+
+      <div class="post-title">Ajax using axios 
+<small><span class="badge rounded-pill bg-info">~20 mins</span></small> 
+</div>
+<div class="post-content">
+<div class="row">  
+  <div class="col">
+    <h4 id="axios-library">Axios Library <a class="direct-link" href="#axios-library">#</a></h4>
+<ul>
+<li>
+<p><a href="https://www.npmjs.com/package/axios">https://www.npmjs.com/package/axios</a> ( ~ 18M Weekly Downloads)</p>
+</li>
+<li>
+<p>CDN</p>
+<ul>
+<li><a href="https://cdnjs.com/libraries/axios">https://cdnjs.com/libraries/axios</a></li>
+</ul>
+<pre class="language-js"><code class="language-js"><span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"</span> integrity<span class="token operator">=</span><span class="token string">"sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="</span> crossorigin<span class="token operator">=</span><span class="token string">"anonymous"</span> referrerpolicy<span class="token operator">=</span><span class="token string">"no-referrer"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+</li>
+</ul>
+<h5 id="rest-api">REST API <a class="direct-link" href="#rest-api">#</a></h5>
+<ul>
+<li>List all users  (GET)</li>
+<li>List all users for the given role (GET)</li>
+<li>Get user by id (GET)</li>
+<li>Add User Detail (POST)</li>
+<li>Update user details (PUT)</li>
+<li>Update Password (PATCH)</li>
+<li>Delete user by id (DELETE)</li>
+</ul>
+<h6 id="1.-get-all-users-details">1. Get all Users Details <a class="direct-link" href="#1.-get-all-users-details">#</a></h6>
+<ul>
+<li>GET API</li>
+</ul>
+<pre class="language-js"><code class="language-js">    <span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token string">"http://localhost:8080/api/v1/users"</span><span class="token punctuation">;</span><br>    axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token operator">=></span><span class="token punctuation">{</span><br>      <span class="token keyword">const</span> users <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">;</span><br>      console<span class="token punctuation">.</span><span class="token function">table</span><span class="token punctuation">(</span>users<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h6 id="2.-get-all-users-details-for-the-given-role">2. Get all Users Details for the given role <a class="direct-link" href="#2.-get-all-users-details-for-the-given-role">#</a></h6>
+<ul>
+<li>GET API with Query Params</li>
+<li>Query Param:role=USER</li>
+</ul>
+<pre class="language-js"><code class="language-js">    <span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token string">"http://localhost:8080/api/v1/users?role=USER"</span><span class="token punctuation">;</span><br>    axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token operator">=></span><span class="token punctuation">{</span><br>      <span class="token keyword">const</span> users <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">;</span><br>      console<span class="token punctuation">.</span><span class="token function">table</span><span class="token punctuation">(</span>users<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h6 id="3.-get-user-detail-for-the-given-id">3. Get User Detail for the given id <a class="direct-link" href="#3.-get-user-detail-for-the-given-id">#</a></h6>
+<ul>
+<li>GET API with Path Variable</li>
+<li>Path Variable : id</li>
+</ul>
+<pre class="language-js"><code class="language-js">    <span class="token keyword">const</span> id <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><br>    <span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token string">"http://localhost:8080/api/v1/users/"</span><span class="token operator">+</span> id <span class="token punctuation">;</span><br>    axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token operator">=></span><span class="token punctuation">{</span><br>      <span class="token keyword">const</span> user <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">;</span><br>      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h6 id="4.-add-user-detail">4. Add User Detail <a class="direct-link" href="#4.-add-user-detail">#</a></h6>
+<ul>
+<li>POST</li>
+</ul>
+<pre class="language-js"><code class="language-js">    <span class="token keyword">const</span> userDetail <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Naresh"</span><span class="token punctuation">,</span> <span class="token literal-property property">email</span><span class="token operator">:</span><span class="token string">"n@gmail.com"</span> <span class="token punctuation">,</span> <span class="token literal-property property">password</span><span class="token operator">:</span><span class="token string">"pass123"</span><span class="token punctuation">,</span> <span class="token literal-property property">role</span><span class="token operator">:</span><span class="token string">"USER"</span><span class="token punctuation">}</span><span class="token punctuation">;</span><br><br>    <span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token string">"http://localhost:8080/api/v1/users"</span><span class="token punctuation">;</span><br>    axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> userDetail<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token operator">=></span><span class="token punctuation">{</span><br>      <span class="token keyword">let</span> result <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">;</span><br>      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h6 id="5.-update-user-detail">5. Update User Detail <a class="direct-link" href="#5.-update-user-detail">#</a></h6>
+<ul>
+<li>PUT</li>
+<li>Path Variable : id</li>
+</ul>
+<pre class="language-js"><code class="language-js">    <span class="token keyword">const</span> userDetail <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Naresh Kumar"</span><span class="token punctuation">,</span> <span class="token literal-property property">email</span><span class="token operator">:</span><span class="token string">"n1@gmail.com"</span> <span class="token punctuation">,</span> <span class="token literal-property property">password</span><span class="token operator">:</span><span class="token string">"pass1234"</span><span class="token punctuation">,</span> <span class="token literal-property property">role</span><span class="token operator">:</span><span class="token string">"USER"</span><span class="token punctuation">}</span><span class="token punctuation">;</span><br><br>    <span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token string">"http://localhost:8080/api/v1/users/"</span> <span class="token operator">+</span> userDetail<span class="token punctuation">.</span>id<span class="token punctuation">;</span><br>    axios<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> userDetail<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token operator">=></span><span class="token punctuation">{</span><br>      <span class="token keyword">let</span> result <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">;</span><br>      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h6 id="6.-change-password">6. Change Password <a class="direct-link" href="#6.-change-password">#</a></h6>
+<ul>
+<li>Patch - Partial Update</li>
+<li>Path Variable : id</li>
+</ul>
+<pre class="language-js"><code class="language-js">    <span class="token keyword">const</span> userDetail <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token literal-property property">password</span><span class="token operator">:</span><span class="token string">"pass1234"</span><span class="token punctuation">}</span><span class="token punctuation">;</span><br><br>    <span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token string">"http://localhost:8080/api/v1/users/"</span> <span class="token operator">+</span> userDetail<span class="token punctuation">.</span>id<span class="token punctuation">;</span><br>    axios<span class="token punctuation">.</span><span class="token function">patch</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> userDetail<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token operator">=></span><span class="token punctuation">{</span><br>      <span class="token keyword">let</span> result <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">;</span><br>      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h6 id="6.-delete-user-detail-by-id">6. Delete User detail by id <a class="direct-link" href="#6.-delete-user-detail-by-id">#</a></h6>
+<ul>
+<li>DELETE with path variable</li>
+<li>Path Variable : id</li>
+</ul>
+<pre class="language-js"><code class="language-js">    <span class="token keyword">const</span> id <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><br>    <span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token string">"http://localhost:8080/api/v1/users/"</span> <span class="token operator">+</span> userDetail<span class="token punctuation">.</span>id<span class="token punctuation">;</span><br>    axios<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token operator">=></span><span class="token punctuation">{</span><br>      <span class="token keyword">let</span> result <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">;</span><br>      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h5 id="exception-handling">Exception Handling <a class="direct-link" href="#exception-handling">#</a></h5>
+<ul>
+<li>add catch block</li>
+</ul>
+<pre class="language-js"><code class="language-js">  axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token operator">=></span><span class="token punctuation">{</span><br>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token operator">=></span><span class="token punctuation">{</span><br>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token operator">?.</span>response<span class="token operator">?.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+  
+  </div>
+</div>
+
+</div>
+
+    </main>
+
+    <footer></footer>
+
+    <!-- Current page: /javascript/axios/ -->
+    <script>
+    function updateStatus(id){
+      alert("Successfully Updated" + id);
+    }
+    </script>
+  </body>
+</html>

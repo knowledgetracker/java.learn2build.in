@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage - 2</title>
+    <meta name="description" content="This is a post">
+    
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Java Blog">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="Java Blog">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    
+  </head>
+  <body>
+    
+    <main class="container  tmpl-post">
+
+      <div class="post-title">LocalStorage - 2 
+<small><span class="badge rounded-pill bg-info">~20 mins</span></small> 
+</div>
+<div class="post-content">
+<div class="row">  
+  <div class="col">
+    <h6 id="prerequiste%3A-store-a-name%2C-userid-in-localstorage">Prerequiste: Store a name, userId in LocalStorage <a class="direct-link" href="#prerequiste%3A-store-a-name%2C-userid-in-localstorage">#</a></h6>
+<pre class="language-js"><code class="language-js">  <span class="token keyword">let</span> firstName<span class="token operator">=</span><span class="token string">'Sachin'</span><span class="token punctuation">;</span> <span class="token comment">//string</span><br>  localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span>firstName<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token keyword">let</span> userId <span class="token operator">=</span> <span class="token number">101</span><span class="token punctuation">;</span> <span class="token comment">//number</span><br>  localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">,</span>userId<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h6 id="task-1%3A-instead-of-storing-individual-data-%2C-store-it-as-an-object">Task 1: Instead of storing individual data , store it as an object <a class="direct-link" href="#task-1%3A-instead-of-storing-individual-data-%2C-store-it-as-an-object">#</a></h6>
+<pre class="language-js"><code class="language-js">  <span class="token keyword">let</span> user1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">101</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">"Sachin"</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// Object</span><br>  localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"LOGGED_IN_USER"</span><span class="token punctuation">,</span> user1<span class="token punctuation">)</span><span class="token punctuation">;</span>  <br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span><span class="token constant">LOGGED_IN_USER</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <br>  <span class="token comment">//It will return as "[object Object]"  which is not usable.</span></code></pre>
+<p>Note: While storing objects, we need to do JSON.stringify()</p>
+<h6 id="task-2.1%3A-instead-of-storing-individual-data-%2C-store-it-as-an-object">Task 2.1: Instead of storing individual data , store it as an object <a class="direct-link" href="#task-2.1%3A-instead-of-storing-individual-data-%2C-store-it-as-an-object">#</a></h6>
+<pre class="language-js"><code class="language-js">  <span class="token keyword">let</span> user1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">101</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">"Sachin"</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// Object</span><br>  localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"LOGGED_IN_USER"</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>user1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span><span class="token constant">LOGGED_IN_USER</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <br>  <span class="token comment">//It will return as "{"id":101,"name":"Sachin"}"  which is usable.</span></code></pre>
+<h6 id="task-2.2%3A-display-the-user-details(id%2Cname)">Task 2.2: Display the user details(id,name) <a class="direct-link" href="#task-2.2%3A-display-the-user-details(id%2Cname)">#</a></h6>
+<pre class="language-js"><code class="language-js">    <span class="token keyword">let</span> userStr <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"LOGGED_IN_USER"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">let</span> userObj <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>userStr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//We need to convert string to object using JSON.</span><br>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>userObj<span class="token punctuation">.</span>id <span class="token operator">+</span><span class="token string">"-"</span> <span class="token operator">+</span>userObj<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token comment">//It returns =>101-Sachin</span></code></pre>
+  
+  </div>
+</div>
+
+</div>
+
+    </main>
+
+    <footer></footer>
+
+    <!-- Current page: /javascript/localstorage_2/ -->
+    <script>
+    function updateStatus(id){
+      alert("Successfully Updated" + id);
+    }
+    </script>
+  </body>
+</html>

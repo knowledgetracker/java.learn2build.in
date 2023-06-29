@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Http Server</title>
+    <meta name="description" content="My Blog">
+    
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Java Blog">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="Java Blog">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    
+  </head>
+  <body>
+    
+    <main class="container  tmpl-post">
+
+      <div class="post-title">Http Server 
+<small><span class="badge rounded-pill bg-info">3 hrs</span></small> 
+</div>
+<div class="post-content">
+<div class="row">  
+  <div class="col">
+    <h6 id="prerequisite-%3A-install-http-server">Prerequisite : Install Http Server <a class="direct-link" href="#prerequisite-%3A-install-http-server">#</a></h6>
+<ul>
+<li><a href="https://www.npmjs.com/package/http-server">https://www.npmjs.com/package/http-server</a> ( Weekly Downloads - 37M)</li>
+</ul>
+<pre class="language-js"><code class="language-js">    npm i http<span class="token operator">-</span>server</code></pre>
+<h6 id="task-1%3A-create-server.js-file">Task 1: Create server.js file <a class="direct-link" href="#task-1%3A-create-server.js-file">#</a></h6>
+<ul>
+<li>Http Server has a built-in http module.</li>
+<li>Reference : <a href="https://www.w3schools.com/nodejs/nodejs_http.asp">https://www.w3schools.com/nodejs/nodejs_http.asp</a></li>
+</ul>
+<pre class="language-js"><code class="language-js">    <span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token comment">// create Server</span><br>    http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>        response<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string-property property">'Content-Type'</span><span class="token operator">:</span> <span class="token string">'text/plain'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        response<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'Hello World'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8081</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Server running at http://127.0.0.1:8081/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h6 id="task-2%3A-start-the-server">Task 2: Start the server <a class="direct-link" href="#task-2%3A-start-the-server">#</a></h6>
+<pre class="language-js"><code class="language-js">    node server<span class="token punctuation">.</span>js</code></pre>
+<h6 id="task-3%3A-test-the-url">Task 3: Test the URL <a class="direct-link" href="#task-3%3A-test-the-url">#</a></h6>
+<ul>
+<li><a href="http://127.0.0.1:8081/">http://127.0.0.1:8081/</a></li>
+</ul>
+  
+  </div>
+</div>
+
+</div>
+
+    </main>
+
+    <footer></footer>
+
+    <!-- Current page: /nodejs/http-server/ -->
+    <script>
+    function updateStatus(id){
+      alert("Successfully Updated" + id);
+    }
+    </script>
+  </body>
+</html>

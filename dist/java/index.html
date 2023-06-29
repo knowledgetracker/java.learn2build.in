@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Blog</title>
+    <meta name="description" content="My Blog">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">    
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Java Blog">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="Java Blog">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" href="#">Java Training</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-white " href="/">Home</a>
+              <i class="bi bi-flag"></i>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white  active" href="/Java/">Programming Fundamentals</a>
+              <i class="bi bi-flag"></i>
+            </li>  
+      </ul>
+    </div>
+  </div>
+</nav>
+    </header>
+
+    <main class=" tmpl-home">
+
+      
+<h2>Programming Fundamentals</h2>
+
+
+<!--
+<ol class="postlist" style="counter-reset: start-from 24">
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day1/" class="postlist-link">Day 01 - Environment Setup</a>
+    <time class="postlist-date" datetime="2023-06-01">01 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day2/" class="postlist-link">Day 02 - Structure of Java program</a>
+    <time class="postlist-date" datetime="2023-06-02">02 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day3/" class="postlist-link">Day 03 - Datatypes</a>
+    <time class="postlist-date" datetime="2023-06-05">05 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day4/" class="postlist-link">Day 04 - Class and Methods</a>
+    <time class="postlist-date" datetime="2023-06-06">06 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day5/" class="postlist-link">Day 05 - Objects</a>
+    <time class="postlist-date" datetime="2023-06-07">07 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day6/" class="postlist-link">Day 06 - String Utilities</a>
+    <time class="postlist-date" datetime="2023-06-08">08 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day7/" class="postlist-link">Day 07 - Conditional Statements</a>
+    <time class="postlist-date" datetime="2023-06-09">09 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day8/" class="postlist-link">Day 08 - Looping Statements</a>
+    <time class="postlist-date" datetime="2023-06-12">12 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day9/" class="postlist-link">Day 09 - Arrays</a>
+    <time class="postlist-date" datetime="2023-06-13">13 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day10/" class="postlist-link">Day 10 - Exception Handling ((Part 1)</a>
+    <time class="postlist-date" datetime="2023-06-14">14 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day11/" class="postlist-link">Day 11 - Exception Handling (Part 2)</a>
+    <time class="postlist-date" datetime="2023-06-15">15 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day12/" class="postlist-link">Day 12 - Validation (Part 1)</a>
+    <time class="postlist-date" datetime="2023-06-16">16 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day13/" class="postlist-link">Day 13 - Validation (Part 2)</a>
+    <time class="postlist-date" datetime="2023-06-19">19 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day14/" class="postlist-link">Day 14 - Utilities</a>
+    <time class="postlist-date" datetime="2023-06-20">20 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day15/" class="postlist-link">Day 15 - Scanner</a>
+    <time class="postlist-date" datetime="2023-06-21">21 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/assessment1/" class="postlist-link">Assessment 1</a>
+    <time class="postlist-date" datetime="2023-06-22">22 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day16/" class="postlist-link">Day 16 - Maven (Part 1)</a>
+    <time class="postlist-date" datetime="2023-06-23">23 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day17/" class="postlist-link">Day 17 - Maven (Part 2)</a>
+    <time class="postlist-date" datetime="2023-06-24">24 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day18/" class="postlist-link">Day 18 - JUnit (Part 1)</a>
+    <time class="postlist-date" datetime="2023-06-27">27 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day19/" class="postlist-link">Day 19 - JUnit (Part 2)</a>
+    <time class="postlist-date" datetime="2023-06-28">28 Jun 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day20/" class="postlist-link">Day 20 - Sonar Cloud (Part 1)</a>
+    <time class="postlist-date" datetime="2023-07-03">03 Jul 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/day21/" class="postlist-link">Day 21 - Sonar Cloud (Part 2)</a>
+    <time class="postlist-date" datetime="2023-07-04">04 Jul 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/programmingfundamentals/assessment2/" class="postlist-link">Assessment 2</a>
+    <time class="postlist-date" datetime="2023-07-05">05 Jul 2023</time>
+    
+      <a href="/tags/java/" class="post-tag" >java</a>
+  </li>
+
+</ol>
+-->
+
+<table class="table table-bordered postlist">
+<thead>
+<tr><th>Sno</th><th>Title</th><th>Duration</th><th>Solved</th> <th>Practice</th><th>HOTS</th><th>Planned Date</th><th>Status</th><th>Action</th></tr>
+</thead>
+<tbody>
+
+
+  
+  <tr>
+  <td>1</td>
+  <td >
+    <a href="/programmingfundamentals/day1/" target="_blank" >
+    Day 01 - Environment Setup</a>
+  </td>
+  <td>3 hrs</td>
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-01">01 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day1/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>2</td>
+  <td >
+    <a href="/programmingfundamentals/day2/" target="_blank" >
+    Day 02 - Structure of Java program</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-02">02 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day2/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+
+  
+  <tr>
+  <td>4</td>
+  <td >
+    <a href="/programmingfundamentals/day4/" target="_blank" >
+    Day 04 - Class and Methods</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-06">06 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day4/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>5</td>
+  <td >
+    <a href="/programmingfundamentals/day5/" target="_blank" >
+    Day 05 - Objects</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-07">07 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day5/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>6</td>
+  <td >
+    <a href="/programmingfundamentals/day6/" target="_blank" >
+    Day 06 - String Utilities</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-08">08 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day6/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>7</td>
+  <td >
+    <a href="/programmingfundamentals/day7/" target="_blank" >
+    Day 07 - Conditional Statements</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-09">09 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day7/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>8</td>
+  <td >
+    <a href="/programmingfundamentals/day8/" target="_blank" >
+    Day 08 - Looping Statements</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-12">12 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day8/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>9</td>
+  <td >
+    <a href="/programmingfundamentals/day9/" target="_blank" >
+    Day 09 - Arrays</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-13">13 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day9/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>10</td>
+  <td >
+    <a href="/programmingfundamentals/day10/" target="_blank" >
+    Day 10 - Exception Handling ((Part 1)</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-14">14 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day10/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>11</td>
+  <td >
+    <a href="/programmingfundamentals/day11/" target="_blank" >
+    Day 11 - Exception Handling (Part 2)</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-15">15 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day11/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>12</td>
+  <td >
+    <a href="/programmingfundamentals/day12/" target="_blank" >
+    Day 12 - Validation (Part 1)</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-16">16 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day12/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>13</td>
+  <td >
+    <a href="/programmingfundamentals/day13/" target="_blank" >
+    Day 13 - Validation (Part 2)</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-19">19 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day13/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>14</td>
+  <td >
+    <a href="/programmingfundamentals/day14/" target="_blank" >
+    Day 14 - Utilities</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-20">20 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day14/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>15</td>
+  <td >
+    <a href="/programmingfundamentals/day15/" target="_blank" >
+    Day 15 - Scanner</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-21">21 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day15/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>16</td>
+  <td >
+    <a href="/programmingfundamentals/assessment1/" target="_blank" >
+    Assessment 1</a>
+  </td>
+  <td>3 hrs</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-22">22 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/assessment1/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>17</td>
+  <td >
+    <a href="/programmingfundamentals/day16/" target="_blank" >
+    Day 16 - Maven (Part 1)</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-23">23 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day16/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>18</td>
+  <td >
+    <a href="/programmingfundamentals/day17/" target="_blank" >
+    Day 17 - Maven (Part 2)</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-24">24 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day17/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>19</td>
+  <td >
+    <a href="/programmingfundamentals/day18/" target="_blank" >
+    Day 18 - JUnit (Part 1)</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-27">27 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day18/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>20</td>
+  <td >
+    <a href="/programmingfundamentals/day19/" target="_blank" >
+    Day 19 - JUnit (Part 2)</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-06-28">28 Jun 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day19/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>21</td>
+  <td >
+    <a href="/programmingfundamentals/day20/" target="_blank" >
+    Day 20 - Sonar Cloud (Part 1)</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-07-03">03 Jul 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day20/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>22</td>
+  <td >
+    <a href="/programmingfundamentals/day21/" target="_blank" >
+    Day 21 - Sonar Cloud (Part 2)</a>
+  </td>
+  <td>3 hrs</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-07-04">04 Jul 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/day21/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+  
+  <tr>
+  <td>23</td>
+  <td >
+    <a href="/programmingfundamentals/assessment2/" target="_blank" >
+    Assessment 2</a>
+  </td>
+  <td>3 hrs</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    
+  <td>
+  <time class="postlist-date" datetime="2023-07-05">05 Jul 2023</time>
+  </td>
+  <td></td>
+  <td>
+   <a href="/programmingfundamentals/assessment2/"  class="btn btn-info btn-sm text-white">View</a>
+  </td>
+  </tr>
+  
+
+</tbody>
+</table>
+
+
+
+
+
+    </main>
+
+    <footer></footer>
+
+    <!-- Current page: /Java/ -->
+    <script>
+    function updateStatus(id){
+      alert("Successfully Updated" + id);
+    }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Directives</title>
+    <meta name="description" content="This is a post">
+    
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Java Blog">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="Java Blog">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    
+  </head>
+  <body>
+    
+    <main class="container  tmpl-post">
+
+      <div class="post-title">Attribute Directives 
+<small><span class="badge rounded-pill bg-info">~20 mins</span></small> 
+</div>
+<div class="post-content">
+<div class="row">  
+  <div class="col">
+    <h6 id="attributes">Attributes <a class="direct-link" href="#attributes">#</a></h6>
+<ul>
+<li>
+<p>An Attribute directive changes the appearance or behavior of a DOM element.</p>
+</li>
+<li>
+<p>Most common attributes</p>
+<ul>
+<li>NgClass—adds and removes a set of CSS classes.</li>
+<li>NgStyle—adds and removes a set of HTML styles.</li>
+<li>NgModel—adds two-way data binding to an HTML form element.</li>
+</ul>
+</li>
+</ul>
+<h5 id="task-1%3A-binding-to-class---ngclass%2C-class">Task 1: Binding to Class - ngClass, class <a class="direct-link" href="#task-1%3A-binding-to-class---ngclass%2C-class">#</a></h5>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">[ngClass]</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>isSpecial ? 'special' : ''<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>This div is special<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Note :</p>
+<ul>
+<li>To add or remove a single class, use class binding rather than NgClass.</li>
+</ul>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">[class.special]</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>isSpecial<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>This div is special<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h6 id="binding-to-styles">Binding to styles <a class="direct-link" href="#binding-to-styles">#</a></h6>
+<pre class="language-html"><code class="language-html">    [style.width]="100px"<br>    [style.width.px]="100"<br>    [style]="expression"</code></pre>
+<h6 id="task-2%3A-disable-form-submit-button-if-form-is-invalid">Task 2: Disable form submit button if form is invalid <a class="direct-link" href="#task-2%3A-disable-form-submit-button-if-form-is-invalid">#</a></h6>
+<pre class="language-html"><code class="language-html">   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">#f</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ngForm<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span> <span class="token attr-name">ngModel</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">[disabled]</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>f.invalid<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Submit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+  
+  </div>
+</div>
+
+</div>
+
+    </main>
+
+    <footer></footer>
+
+    <!-- Current page: /angular/attribute-directives/ -->
+    <script>
+    function updateStatus(id){
+      alert("Successfully Updated" + id);
+    }
+    </script>
+  </body>
+</html>

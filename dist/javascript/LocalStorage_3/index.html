@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage - 3</title>
+    <meta name="description" content="This is a post">
+    
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Java Blog">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="Java Blog">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    
+  </head>
+  <body>
+    
+    <main class="container  tmpl-post">
+
+      <div class="post-title">LocalStorage - 3 
+<small><span class="badge rounded-pill bg-info">~20 mins</span></small> 
+</div>
+<div class="post-content">
+<div class="row">  
+  <div class="col">
+    <h6 id="prerequiste%3A-create-users-array-and-store-users-data">Prerequiste: Create users array and store users data <a class="direct-link" href="#prerequiste%3A-create-users-array-and-store-users-data">#</a></h6>
+<pre class="language-js"><code class="language-js">    <span class="token keyword">let</span> user1 <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">101</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">"Sachin"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span><br>    <span class="token keyword">let</span> user2 <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">102</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">"Dhoni"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span><br>    <span class="token keyword">let</span> users <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>    users<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>user1<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    users<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>user2<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>users<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token comment">// [{"id":101,"name":"Sachin"},{"id":102,"name":"Dhoni"}]</span></code></pre>
+<h6 id="task-1%3A-store-users-in-localstorage">Task 1: Store users in LocalStorage <a class="direct-link" href="#task-1%3A-store-users-in-localstorage">#</a></h6>
+<pre class="language-js"><code class="language-js">    localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"USERS"</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>users<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h6 id="task-2%3A-retrieve-users-data-and-display-user-details">Task 2: Retrieve users data and display user details <a class="direct-link" href="#task-2%3A-retrieve-users-data-and-display-user-details">#</a></h6>
+<pre class="language-js"><code class="language-js">    <span class="token keyword">let</span> usersData <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"USERS"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>usersData<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> obj <span class="token keyword">of</span> usersData<span class="token punctuation">)</span><span class="token punctuation">{</span><br>        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>id <span class="token operator">+</span> <span class="token string">"-"</span> <span class="token operator">+</span> obj<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    <span class="token comment">//output:</span><br>    <span class="token comment">//101-Sachin</span><br>    <span class="token comment">//102-Dhoni</span><br></code></pre>
+<h5 id="task-3%3A-add-an-item-to-existing-users-data-in-localstorage">Task 3: Add an item to existing Users data in localStorage <a class="direct-link" href="#task-3%3A-add-an-item-to-existing-users-data-in-localstorage">#</a></h5>
+<pre class="language-js"><code class="language-js">    <span class="token keyword">let</span> usersStr <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"USERS"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>usersStr<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token comment">// if users data available in localStorage, then do parse else assign an empty array</span><br><br>    <span class="token keyword">let</span> users <span class="token operator">=</span> usersStr <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>usersStr<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <br>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>users<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">let</span> newUser <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">103</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">'Virat'</span><span class="token punctuation">}</span><span class="token punctuation">;</span><br>    users<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>newUser<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token comment">//write the updated users array to localStorage</span><br>    localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"USERS"</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>users<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+  
+  </div>
+</div>
+
+</div>
+
+    </main>
+
+    <footer></footer>
+
+    <!-- Current page: /javascript/LocalStorage_3/ -->
+    <script>
+    function updateStatus(id){
+      alert("Successfully Updated" + id);
+    }
+    </script>
+  </body>
+</html>

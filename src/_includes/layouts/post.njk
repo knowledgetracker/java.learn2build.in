@@ -1,0 +1,15 @@
+---
+layout: layouts/post_base.njk
+templateClass: tmpl-post
+---
+<div class="post-title">{{ title }} 
+<small><span class="badge rounded-pill bg-info">{{duration}}</span></small> 
+</div>
+<div class="post-content">
+<div class="row">  
+  <div class="col">
+    {{ content | safe }}  
+  </div>
+</div>
+
+</div>
