@@ -19,6 +19,30 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
   });
 
+  eleventyConfig.addFilter("solved", data => {
+    console.log('Solved', data);
+    let total = "";
+    for(let page of data){
+      if(page.data.solved!=null){
+        total = total + (page.data.solved.length);
+      }
+    }
+    return total;
+  });
+
+  
+
+  eleventyConfig.addFilter("practice", data => {
+    console.log('Solved', data);
+    let total = 0;
+    for(let page of data){
+      if(page.data.practice){
+        total += parseInt(page.data.practice);
+      }
+    }
+    return total;
+  });
+
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');

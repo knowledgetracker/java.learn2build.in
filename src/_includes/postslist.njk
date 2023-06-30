@@ -20,8 +20,8 @@
 <tr><th>Sno</th><th>Title</th><th>Duration</th><th>Solved</th> <th>Practice</th><th>HOTS</th><th>Planned Date</th><th>Status</th><th>Action</th></tr>
 </thead>
 <tbody>
-
-{% for post in postslist  %}
+{% set totalSolved %}0{% endset %}
+{%for post in postslist %}
   {% if post.data.published != false %}
   <tr>
   <td>{{ loop.index }}</td>
@@ -46,4 +46,3 @@
 {% endfor %}
 </tbody>
 </table>
-

@@ -13,247 +13,246 @@ layout: layouts/post.njk
 
 #### Date, LocalDate & LocalDateTime
 ### Solved
-- #####  Solved 1:
+#####  Solved 1:
 
 ```java
 
-package day12;
+	package day12;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
+	import java.time.LocalDate;
+	import java.time.LocalDateTime;
+	import java.util.Date;
 
-public class DateDemo {
+	public class DateDemo {
 
-	public static void main(String[] args) {
-		
-		Date date = new Date();
-		System.out.println(date);		
-		
-		LocalDate today = LocalDate.now();
-	  System.out.println(today);
-	  
-	  LocalDateTime now = LocalDateTime.now();
-	  System.out.println(now);
+		public static void main(String[] args) {
+			
+			Date date = new Date();
+			System.out.println(date);		
+			
+			LocalDate today = LocalDate.now();
+			System.out.println(today);
+			
+			LocalDateTime now = LocalDateTime.now();
+			System.out.println(now);
+
+		}
 
 	}
-
-}
 ```
-- ##### Solved 2: 
+##### Solved 2: 
 ```java
-package day12;
+	package day12;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+	import java.time.LocalDate;
+	import java.time.format.DateTimeFormatter;
 
-public class DateDemo2 {
+	public class DateDemo2 {
 
-	public static void main(String[] args) {
+		public static void main(String[] args) {
 
-		// today's Date
-		LocalDate today = LocalDate.now();
+			// today's Date
+			LocalDate today = LocalDate.now();
 
-		// Expected format
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yy");
+			// Expected format
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yy");
 
-		// Converting date to the format
-		String formattedDate = today.format(formatter);
-		System.out.println(formattedDate);
+			// Converting date to the format
+			String formattedDate = today.format(formatter);
+			System.out.println(formattedDate);
+		}
+
 	}
-
-}
 ```
-
-- ##### Solved 3:
+##### Solved 3:
 ```java
-package day12;
+	package day12;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+	import java.time.LocalDate;
+	import java.time.format.DateTimeFormatter;
 
-public class DateDemo3 {
+	public class DateDemo3 {
 
-	public static void main(String[] args) {
+		public static void main(String[] args) {
 
-		// Date in String format
-		String dateString = "2023-05-21";
+			// Date in String format
+			String dateString = "2023-05-21";
 
-		// Format the DateString is In.
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+			// Format the DateString is In.
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-		// Converting dateString to LocalDate
-		LocalDate parsedDate = LocalDate.parse(dateString, formatter);
-		System.out.println(parsedDate);
-		System.out.println(parsedDate.getYear());
-		System.out.println(parsedDate.getMonth());
-		System.out.println(parsedDate.getMonthValue());
-		System.out.println(parsedDate.getDayOfMonth());
-		
-	}
-
-}
-```
-- ##### Solved 4:
- ```java
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
-public class DateDemo4 {
-
-	public static void main(String[] args) {
-
-		String dateStr = "2023/05/21"; 
-		// Expected in "yyyy-MM-dd" format, but it's in "yyyy/MM/dd" format.
-		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-
-		try {
-
-			LocalDate parsedDate = LocalDate.parse(dateStr, formatter);
+			// Converting dateString to LocalDate
+			LocalDate parsedDate = LocalDate.parse(dateString, formatter);
 			System.out.println(parsedDate);
-
-		} catch (Exception e) {
-
-			System.out.println("Failed to parse the date: " + e.getMessage());
-			e.printStackTrace();
-
+			System.out.println(parsedDate.getYear());
+			System.out.println(parsedDate.getMonth());
+			System.out.println(parsedDate.getMonthValue());
+			System.out.println(parsedDate.getDayOfMonth());
+			
 		}
 
 	}
-
-}
 ```
-Additional Solved: Tatkal Train Ticket – Date validation using LocalDate methods
-```java
-/**
- * 
- */
-package day14.solved;
+##### Solved 4:
+ ```java
+	import java.time.LocalDate;
+	import java.time.format.DateTimeFormatter;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+	public class DateDemo4 {
 
-public class DateDemo5 {
+		public static void main(String[] args) {
 
-	public static void main(String[] args) throws Exception {
-		LocalDate currentDate = LocalDate.now();
-		LocalDate journeyDate = LocalDate.parse("2023-06-14");
+			String dateStr = "2023/05/21"; 
+			// Expected in "yyyy-MM-dd" format, but it's in "yyyy/MM/dd" format.
+			
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 
-		System.out.println("Todays Date :" + currentDate + ", Journey Date:" + journeyDate);
-		if (journeyDate.isBefore(currentDate)) {
-			throw new Exception("Journey Date cannot be less than current date");
+			try {
+
+				LocalDate parsedDate = LocalDate.parse(dateStr, formatter);
+				System.out.println(parsedDate);
+
+			} catch (Exception e) {
+
+				System.out.println("Failed to parse the date: " + e.getMessage());
+				e.printStackTrace();
+
+			}
+
 		}
-		LocalDate tatkalDate = currentDate.plusDays(1);
-		System.out.println("Note:Tatkal ticket can be booked on or before :" + tatkalDate);
-		if (tatkalDate.isBefore(journeyDate)) {
-			System.out.println("Tatkal ticket cannot be booked:" + journeyDate);
-		} else {
-			System.out.println("Tatkal Ticket booked for :" + journeyDate);
+
+	}
+```
+##### Additional Solved: Tatkal Train Ticket – Date validation using LocalDate methods
+```java
+	/**
+	 * 
+	 */
+	package day14.solved;
+
+	import java.time.LocalDate;
+	import java.time.format.DateTimeFormatter;
+
+	public class DateDemo5 {
+
+		public static void main(String[] args) throws Exception {
+			LocalDate currentDate = LocalDate.now();
+			LocalDate journeyDate = LocalDate.parse("2023-06-14");
+
+			System.out.println("Todays Date :" + currentDate + ", Journey Date:" + journeyDate);
+			if (journeyDate.isBefore(currentDate)) {
+				throw new Exception("Journey Date cannot be less than current date");
+			}
+			LocalDate tatkalDate = currentDate.plusDays(1);
+			System.out.println("Note:Tatkal ticket can be booked on or before :" + tatkalDate);
+			if (tatkalDate.isBefore(journeyDate)) {
+				System.out.println("Tatkal ticket cannot be booked:" + journeyDate);
+			} else {
+				System.out.println("Tatkal Ticket booked for :" + journeyDate);
+			}
 		}
 	}
-}
 ```
  ##### StringBuffer & StringBuilder
  - ##### Solved 1:
 ```java
-package day12;
+	package day12;
 
-public class StringBuilderDemo {
+	public class StringBuilderDemo {
 
-	public static void main(String[] args) {
+		public static void main(String[] args) {
 
-		String firstName = "Surya";
-		String lastName = "Umapathy";
+			String firstName = "Surya";
+			String lastName = "Umapathy";
 
-		StringBuilder fullName = new StringBuilder();
-		fullName.append(firstName);
-		fullName.append(" ");
-		fullName.append(lastName);
+			StringBuilder fullName = new StringBuilder();
+			fullName.append(firstName);
+			fullName.append(" ");
+			fullName.append(lastName);
 
-		System.out.println(fullName);
+			System.out.println(fullName);
+
+		}
 
 	}
-
-}
 ```
  - ##### Solved 2:
 ```java
-package day12;
+	package day12;
 
-public class StringBufferDemo {
+	public class StringBufferDemo {
 
-	public static void main(String[] args) {
-    
-      String firstName = "Surya";
-      String lastName = "Umapathy";
-      
-      StringBuffer fullName = new StringBuffer();
-      fullName.append(firstName).append(" ").append(lastName);
-      
-      System.out.println(fullName);
-	
+		public static void main(String[] args) {
+			
+				String firstName = "Surya";
+				String lastName = "Umapathy";
+				
+				StringBuffer fullName = new StringBuffer();
+				fullName.append(firstName).append(" ").append(lastName);
+				
+				System.out.println(fullName);
+		
+		}
+
 	}
-
-}
 ```
  - ##### Solved 3: Insert a string at a specific position in a **StringBuilder** using the **insert()** method
  ```java
- public class StringBuilderInsert {
-    public static void main(String[] args) {
-        StringBuilder builder = new StringBuilder("Hello World");
-        builder.insert(5, "Beautiful ");
-        System.out.println(builder.toString());
-    }
-}
+	public class StringBuilderInsert {
+			public static void main(String[] args) {
+					StringBuilder builder = new StringBuilder("Hello World");
+					builder.insert(5, "Beautiful ");
+					System.out.println(builder.toString());
+			}
+	}
 ```
  - ##### Solved 4:Reverse a string using **reverse()** method in **StringBuilder**
 ```java
-public class StringBuilderReverse {
-    public static void main(String[] args) {
-        StringBuilder builder = new StringBuilder("Hello");
-        builder.reverse();
-        System.out.println(builder.toString());
-    }
-}
+	public class StringBuilderReverse {
+			public static void main(String[] args) {
+					StringBuilder builder = new StringBuilder("Hello");
+					builder.reverse();
+					System.out.println(builder.toString());
+			}
+	}
 ```
 
  - ##### Solved 5:Appending Array of Strings to create a Single string.
  ```java
- /**
- * Class created for demonstrating appending with String builder
- * 
- * @author BharathwajSoundarara
- *
- */
-public class StringBuilderLoopAppender {
-	public static void main(String[] args) {
+	/**
+	 * Class created for demonstrating appending with String builder
+	 * 
+	 * @author BharathwajSoundarara
+	 *
+	 */
+	public class StringBuilderLoopAppender {
+		public static void main(String[] args) {
 
-		// Program to demonstrate creating a String
-		// Appending a array of Strings
-		String[] strArr = { "This", "is", "a", "collection", "of", "words", "to",
-				"be", "appended", "to", "form", "a", "Sentence" };
-		
-		// Without String Builder
-		String newStrFromSent = "";
-		for (String str: strArr ) {
-			// We are creating a new String everytime we do this
-			newStrFromSent +=  str + " ";
+			// Program to demonstrate creating a String
+			// Appending a array of Strings
+			String[] strArr = { "This", "is", "a", "collection", "of", "words", "to",
+					"be", "appended", "to", "form", "a", "Sentence" };
+			
+			// Without String Builder
+			String newStrFromSent = "";
+			for (String str: strArr ) {
+				// We are creating a new String everytime we do this
+				newStrFromSent +=  str + " ";
+			}
+			System.out.println(newStrFromSent.trim());
+			
+			// GOOD Practice: With String Builder 
+			
+			StringBuilder strBuilderFromSent = new StringBuilder();
+			
+			for (String str: strArr) {
+				// Just appending to an already existing object
+				strBuilderFromSent.append(str);
+				strBuilderFromSent.append(" ");
+			}
+			System.out.println(strBuilderFromSent.toString().trim());
 		}
-		System.out.println(newStrFromSent.trim());
-		
-		// GOOD Practice: With String Builder 
-		
-		StringBuilder strBuilderFromSent = new StringBuilder();
-		
-		for (String str: strArr) {
-			// Just appending to an already existing object
-			strBuilderFromSent.append(str);
-			strBuilderFromSent.append(" ");
-		}
-		System.out.println(strBuilderFromSent.toString().trim());
 	}
-}
 ```
 
 

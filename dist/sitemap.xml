@@ -47,7 +47,17 @@
   </url>
   
   <url>
+    <loc>https://nareshkumarh.com/corejava/day1/</loc>
+    <lastmod>2023-06-14</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nareshkumarh.com/programmingfundamentals/day10/</loc>
+    <lastmod>2023-06-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nareshkumarh.com/servletjsp/day1/</loc>
     <lastmod>2023-06-14</lastmod>
   </url>
   
@@ -117,13 +127,33 @@
   </url>
   
   <url>
+    <loc>https://nareshkumarh.com/tags/corejava/</loc>
+    <lastmod>2023-06-29</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nareshkumarh.com/tags/java/</loc>
+    <lastmod>2023-06-29</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nareshkumarh.com/tags/servletjsp/</loc>
     <lastmod>2023-06-29</lastmod>
   </url>
   
   <url>
     <loc>https://nareshkumarh.com/Java/</loc>
     <lastmod>2023-06-29</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nareshkumarh.com/CoreJava/</loc>
+    <lastmod>2023-06-30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nareshkumarh.com/JavaWeb/</loc>
+    <lastmod>2023-06-30</lastmod>
   </url>
   
   <url>
